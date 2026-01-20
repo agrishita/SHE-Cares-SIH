@@ -1,0 +1,88 @@
+body {
+    background-image: url('https://media.istockphoto.com/id/1419895694/vector/seamless-pattern-of-different-menstrual-hygiene-products-menstrual-cup-sanitary-pad-tampon.jpg?s=612x612&w=0&k=20&c=jxCnC_EGQhV68nX4ixQohz7eaL3Df5EgabuJvAHKAww=');
+    background-size: cover; /* Adjust to cover the entire background */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    height: 100vh; /* Ensure the body covers the full viewport height */
+    margin: 0; /* Remove default margins */
+}
+form {
+    overflow: hidden;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page {
+    transition: transform 0.5s ease-in-out;
+    position: absolute;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.page > div {
+    max-width: 600px;
+    margin: 5px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.page > div > label {
+    margin: 0 10px;
+}
+
+.page .button {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+form input {
+    background-color: rgb(253, 253, 251);
+    border-radius: 10px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(23, 23, 23, 0.1);
+}
+
+form select {
+    background-color: rgb(250, 248, 248);
+    border-radius: 10px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#progress {
+    transition: width 0.5s ease-in-out;
+
+    position: absolute;
+    width: 0%;
+    left: 0;
+    height: 10px;
+    bottom: 0;
+    background: rgb(252, 250, 249);
+}
+
+#page1 {
+    transform: translateY(0%);
+}
+
+#page2 {
+    transform: translateY(100%);
+}
+
+#page3 {
+    transform: translateY(200%);
+}

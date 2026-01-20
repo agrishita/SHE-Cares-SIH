@@ -1,0 +1,25 @@
+body {
+    background-image: url('https://media.istockphoto.com/id/1419895694/vector/seamless-pattern-of-different-menstrual-hygiene-products-menstrual-cup-sanitary-pad-tampon.jpg?s=612x612&w=0&k=20&c=jxCnC_EGQhV68nX4ixQohz7eaL3Df5EgabuJvAHKAww=');
+    background-size: cover; /* Adjust to cover the entire background */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    height: 100vh; /* Ensure the body covers the full viewport height */
+    margin: 0; /* Remove default margins */
+}
+input {
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#copy-container {
+    display: flex;
+    align-items: center;
+}
+
+#copy-container input {
+    flex-grow: 1;
+    margin-right: 10px;
+}

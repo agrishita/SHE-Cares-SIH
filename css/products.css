@@ -1,0 +1,44 @@
+form input {
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+form input {
+    margin-right: 10px;
+}
+
+#get-link {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 10px;
+    bottom: 50px;
+}
+
+#get-link a {
+    font-weight: bold;
+    font-size: 2em;
+    color: #1e1e1e;
+    padding: 20px 30px;
+}
+
+#get-link a::after {
+    bottom: 20px;
+    height: 2px;
+    background-color: #1e1e1e
+}
+
+#get-link a:hover::after {
+    left: 30px;
+    right: 30px;
+}

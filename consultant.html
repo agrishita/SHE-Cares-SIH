@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TrueFlow | Dashboard</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <script src="js/global.js"></script>
+    <script type="module" src="js/dashboard.js"></script>
+    <div id="overlay"></div>
+    <nav class="navbar">
+        <div class="logo"><a href="index.html"><img src="public/logo.png"></a></div>
+        <ul class="navbar-button">
+            <li><a href="login.html">Login</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="article.html">Article</a></li>
+            <li><a href="problem.html" class="active">Problems</a></li>
+            <li><a href="map.html">Menstrual Map</a></li>
+            <li><a href="consultant.html">Consultant</a></li>
+            <li><a href="meditation.html">Meditation/Yoga</a></li>
+            <li><a href="products.html">Find Products</a></li>
+            <li><a href="peppa.html">PEPPA.AI</a></li>
+            <li><a href="cyclash.html">Cyclash</a></li>
+            <li><a href="know.html">Chatbot</a></li>
+        </ul>
+    </nav>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Consultation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #EEEDEB;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin: 20px 0;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        select {
+            padding: 10px;
+            width: 100%;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #1A2130;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #1A2130;
+        }
+
+        #doctor-list {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .doctor-item {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .doctor-item h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        .doctor-item p {
+            margin: 5px 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Doctor Consultation </h1>
+        <div class="input-group">
+            <label for="problem">Select a Health Concern:</label>
+            <select id="problem" name="problem">
+                <option value="" disabled selected>Select a problem</option>
+                <option value="gynecology">Gynecological Issues</option>
+                <option value="endocrinology">Hormonal Imbalance</option>
+                <option value="nutrition">Nutrition & Diet</option>
+                <option value="mentalHealth">Mental Health & Well-being</option>
+                <option value="dermatology">Skin Problems & Care</option>
+                <option value="fertility">Fertility & Pregnancy</option>
+            </select>
+        </div>
+        <button onclick="getDoctors()">Find Doctors</button>
+
+        <div id="doctor-list">
+            <!-- Recommended doctors will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        function getDoctors() {
+            const problem = document.getElementById('problem').value;
+            const doctorList = document.getElementById('doctor-list');
+            doctorList.innerHTML = ''; // Clear previous recommendations
+
+            let doctors = [];
+
+            if (problem === 'gynecology') {
+                doctors = [
+                    { name: "Dr. Alice Thompson", specialty: "Gynecologist", location: "City Women’s Hospital" },
+                    { name: "Dr. Emily Brown", specialty: "Obstetrician", location: "Healthy Life Clinic" }
+                ];
+            } else if (problem === 'endocrinology') {
+                doctors = [
+                    { name: "Dr. Mark Wilson", specialty: "Endocrinologist", location: "Endocrine Care Center" },
+                    { name: "Dr. Sarah Lee", specialty: "Hormone Specialist", location: "Advanced Health Clinic" }
+                ];
+            } else if (problem === 'nutrition') {
+                doctors = [
+                    { name: "Dr. Anna White", specialty: "Nutritionist", location: "Wellness and Nutrition Center" },
+                    { name: "Dr. Kevin Smith", specialty: "Dietitian", location: "Healthy Living Clinic" }
+                ];
+            } else if (problem === 'mentalHealth') {
+                doctors = [
+                    { name: "Dr. John Davis", specialty: "Psychiatrist", location: "Mental Health Center" },
+                    { name: "Dr. Lisa Adams", specialty: "Therapist", location: "Wellness Clinic" }
+                ];
+            } else if (problem === 'dermatology') {
+                doctors = [
+                    { name: "Dr. Susan Green", specialty: "Dermatologist", location: "Skin Care Center" },
+                    { name: "Dr. Michael Gray", specialty: "Cosmetic Dermatologist", location: "Beauty and Skin Clinic" }
+                ];
+            } else if (problem === 'fertility') {
+                doctors = [
+                    { name: "Dr. Jessica Miller", specialty: "Fertility Specialist", location: "Fertility Clinic" },
+                    { name: "Dr. Laura Clark", specialty: "Reproductive Endocrinologist", location: "Women's Health Center" }
+                ];
+            }
+
+            doctors.forEach(doctor => {
+                const doctorItem = document.createElement('div');
+                doctorItem.classList.add('doctor-item');
+                doctorItem.innerHTML = `
+                    <h3>${doctor.name}</h3>
+                    <p>Specialty: ${doctor.specialty}</p>
+                    <p>Location: ${doctor.location}</p>
+                `;
+                doctorList.appendChild(doctorItem);
+            });
+        }
+    </script>
+</body>
+</html>
+
